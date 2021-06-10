@@ -13,4 +13,9 @@ face = face_cascade.detectMultiScale(gray, 1.2, 5)
 print("Number of faces detected: " + str(len(face)))
 
 if len(face):
-	for
+	for (x, y, w, h) in face:
+		cv2.rectangle(image, (x, y), (x + y, y + h), (255, 0, 0), 8)
+
+plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB), cmap=gray)
+plt.xticks([]), plt.yticks([])
+plt.show
